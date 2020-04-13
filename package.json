@@ -1,11 +1,10 @@
 {
-  "name": "zapier-platform-example-app-custom-auth",
+  "name": "jar-zapier-app",
   "version": "1.0.0",
-  "description": "An example app for the Zapier platform.",
-  "repository": "zapier/zapier-platform-example-app-custom-auth",
-  "homepage": "https://zapier.com/",
-  "author": "Bryan Helmig <bryan@zapier.com>",
-  "license": "BSD-3-Clause",
+  "description": "A Zapier app for Jar.",
+  "repository": "samm459/jar-zapier-app",
+  "homepage": "https://jarhq.com/",
+  "author": "Sam Morey <sam@contentcucumber.com>",
   "main": "index.js",
   "scripts": {
     "test": "jest --watch"
