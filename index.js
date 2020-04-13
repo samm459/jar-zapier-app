@@ -1,5 +1,6 @@
 const authentication = require('./authentication');
 const request = require('./triggers/request');
+const invite = require('./creates/invite')
 
 const configureAuth = (request, _, bundle) => {
   request.headers['x-auth-token'] = bundle.authData.api_key
@@ -28,7 +29,7 @@ const App = {
 
   searches: {},
 
-  creates: {}
+  creates: { invite }
 };
 
 // Finally, export the app.

@@ -1,0 +1,11 @@
+{
+  "id": 1,
+  "email": "doc@brown.com",
+  "imageColor": "#c697c0",
+  "firstName": "Emmet",
+  "lastName": "Brown",
+  "name": "Emmet Brown",
+  "phone": "",
+  "role": "client",
+  "clientCompany": "Enguerrand Vidor"
+}
