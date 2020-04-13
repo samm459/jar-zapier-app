@@ -108,3 +108,32 @@ describe('App.creates.invite.operation.perform', () => {
     expect.assertions(1);
   })
 });
+
+describe('App.creates.client.operation.perform', () => {
+  it('has a client_company in the request body', async() => {
+    const bundle = {
+      authData: {
+        api_key: faker.random.alphaNumeric(27),
+        subdomain: faker.lorem.word()
+      },
+      inputData: {
+        name: faker.company.companyName(),
+        description: faker.company.catchPhrase()
+      }
+    }
+
+    const nockReq = nock(`https://${bundle.authData.subdomain}.jarhq.com`)
+      .post(`/api/customers/client_companies.json`)
+      .reply(200, require('./client_company.json'));
+
+    nockReq.on('request', (_, __, body) => {
+      const {client_company} = JSON.parse(body);
+      expect(client_company.name).toEqual(bundle.inputData.name);
+      expect(client_company.description).toEqual(bundle.inputData.description);
+    });
+
+    await appTester(App.creates.client.operation.perform, bundle);
+
+    expect.assertions(2);
+  });
+});
