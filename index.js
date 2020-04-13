@@ -1,23 +1,30 @@
 const authentication = require('./authentication');
+const request = require('./triggers/request');
 
-const includeApiKey = (request, z, bundle) => {
-
+const configureAuth = (request, _, bundle) => {
+  request.headers['x-auth-token'] = bundle.authData.api_key
+  request.url = request.url.replace(
+    /^https:\/\//,
+    'https://' 
+    + bundle.authData.subdomain 
+    + '.'
+  )
   return request;
-};
+}
 
 const App = {
   version: require('./package.json').version,
   platformVersion: require('zapier-platform-core').version,
 
-  authentication: authentication,
+  authentication,
 
-  beforeRequest: [includeApiKey],
+  beforeRequest: [ configureAuth ],
 
   afterResponse: [],
 
   resources: {},
 
-  triggers: {},
+  triggers: { request },
 
   searches: {},
 

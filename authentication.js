@@ -1,17 +1,22 @@
-const testAuth = (z /*, bundle */) => {
-
+const testAuth = async(z) => {
+  const res = await z.request("https://jarhq.com/api/customers/requests.json");
+  return res;
 };
 
 module.exports = {
   type: 'custom',
   fields: [
     {
-      key: 'apiKey',
+      key: 'api_key',
+      label: 'API Key', required: true, type: 'string'
+    },
+    {
+      key: 'subdomain',
       label: 'API Key', required: true, type: 'string'
     }
   ],
   test: testAuth,
-  connectionLabel: (z, bundle) => {
-    return bundle.inputData.username;
+  connectionLabel: (_, bundle) => {
+    return bundle.inputData.subdomain;
   }
 };

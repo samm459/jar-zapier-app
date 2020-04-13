@@ -1,0 +1,42 @@
+{
+  "currentPage": 1,
+  "totalPages": 1,
+  "perPage": 100,
+  "totalEntries": 7,
+  "data": [
+    {
+      "id": 1,
+      "number": 1,
+      "subject": "Welcome to Jar!",
+      "status": "Unassigned",
+      "viewed": false,
+      "requestedBy": {
+        "firstName": "Russ",
+        "lastName": "Perry",
+        "email": "hello@jarhq.com",
+        "client": true
+      },
+      "assignedTo": {
+        "firstName": "Russ",
+        "lastName": "Perry",
+        "email": "hello@jarhq.com"
+      },
+      "group": {
+        "name": "JAR"
+      },
+      "tags": [
+        "example"
+      ],
+      "followers": [
+        {
+          "firstName": "Russ",
+          "lastName": "Perry",
+          "email": "hello@jarhq.com"
+        }
+      ],
+      "dueDate": "2018-05-29T19:39:57.239-07:00",
+      "createdAt": "2018-05-16T11:07:43.912-07:00",
+      "lastUpdatedAt": "2018-05-31T04:43:44.787-07:00"
+    }
+  ]
+}
