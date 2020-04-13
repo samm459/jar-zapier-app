@@ -39,6 +39,7 @@ describe('App.triggers.request.operation.perform', () => {
 
     nock(`https://${bundle.authData.subdomain}.jarhq.com`)
       .get("/api/customers/requests.json")
+      .matchHeader('x-auth-token', bundle.authData.api_key)
       .reply(200, require('./requests.json'));
 
     const resposne = await appTester(App.triggers.request.operation.perform, bundle);
@@ -65,6 +66,7 @@ describe('App.creates.invite.operation.perform', () => {
 
     const nockReq = nock(`https://${bundle.authData.subdomain}.jarhq.com`)
       .post(`/api/customers/client_companies/${bundle.inputData.client_id}/invite_user.json`)
+      .matchHeader('x-auth-token', bundle.authData.api_key)
       .reply(200, require('./invite_user.json'));
 
     nockReq.on('request', (_, __, body) => {
@@ -95,6 +97,7 @@ describe('App.creates.invite.operation.perform', () => {
 
     const nockReq = nock(`https://${bundle.authData.subdomain}.jarhq.com`)
       .post(`/api/customers/client_companies/${bundle.inputData.client_id}/invite_user.json`)
+      .matchHeader('x-auth-token', bundle.authData.api_key)
       .reply(200, require('./invite_user.json'));
 
     nockReq.on('request', (req) => {
@@ -124,6 +127,7 @@ describe('App.creates.client.operation.perform', () => {
 
     const nockReq = nock(`https://${bundle.authData.subdomain}.jarhq.com`)
       .post(`/api/customers/client_companies.json`)
+      .matchHeader('x-auth-token', bundle.authData.api_key)
       .reply(200, require('./client_company.json'));
 
     nockReq.on('request', (_, __, body) => {
