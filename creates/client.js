@@ -34,6 +34,7 @@ module.exports = {
         helpText: 'Description for client company'
       }
     ],
-    perform: createClient
+    perform: createClient,
+    sample: require('../test/client_company.json')
   }
 }

@@ -54,6 +54,7 @@ module.exports = {
         helpText: 'Invite\'s phone number'
       }
     ],
-    perform: sendInvite
+    perform: sendInvite,
+    sample: require('../test/invite_user.json')
   }
 }

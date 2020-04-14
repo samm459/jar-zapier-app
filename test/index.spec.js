@@ -21,7 +21,9 @@ describe('App.authentication.test', () => {
       expect(req.options.headers['x-auth-token'][0])
         .toEqual(bundle.authData.api_key);
       expect(req.options.href)
-        .toEqual(`https://${bundle.authData.subdomain}.jarhq.com/api/customers/requests.json`);
+        .toEqual(
+          `https://${bundle.authData.subdomain}.jarhq.com/api/customers/requests.json`
+        );
     })
     await appTester(App.authentication.test, bundle);
     expect.assertions(2);
@@ -42,7 +44,9 @@ describe('App.triggers.request.operation.perform', () => {
       .matchHeader('x-auth-token', bundle.authData.api_key)
       .reply(200, require('./requests.json'));
 
-    const resposne = await appTester(App.triggers.new_request.operation.perform, bundle);
+    const resposne = await appTester(
+      App.triggers.new_request.operation.perform, bundle
+    );
 
     expect(resposne).toBeInstanceOf(Array);
   });

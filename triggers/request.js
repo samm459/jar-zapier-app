@@ -11,6 +11,7 @@ module.exports = {
     description: 'Triggers when a new request is added by a client customer.'
   },
   operation: {
-    perform: listRequests
+    perform: listRequests,
+    sample: require('../test/requests.json').data[0]
   }
 }
