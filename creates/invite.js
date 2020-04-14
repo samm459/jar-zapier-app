@@ -15,6 +15,12 @@ const sendInvite = async (z, bundle) => {
 }
 
 module.exports = {
+  key: 'send_invite',
+  noun: 'Invite',
+  display: {
+    label: 'Send Invite',
+    description: 'Sends an invite to a chosen email to join a client company account.'
+  },
   operation: {
     inputFields: [
       {

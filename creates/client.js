@@ -13,6 +13,12 @@ const createClient = async (z, bundle) => {
 }
 
 module.exports = {
+  key: 'create_client',
+  noun: 'Client',
+  display: {
+    label: 'Create Client',
+    description: 'Creates a new client company account'
+  },
   operation: {
     inputFields: [
       {
