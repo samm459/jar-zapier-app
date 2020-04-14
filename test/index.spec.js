@@ -42,7 +42,7 @@ describe('App.triggers.request.operation.perform', () => {
       .matchHeader('x-auth-token', bundle.authData.api_key)
       .reply(200, require('./requests.json'));
 
-    const resposne = await appTester(App.triggers.request.operation.perform, bundle);
+    const resposne = await appTester(App.triggers.new_request.operation.perform, bundle);
 
     expect(resposne).toBeInstanceOf(Array);
   });
@@ -77,7 +77,7 @@ describe('App.creates.invite.operation.perform', () => {
       expect(invite.phone).toEqual(bundle.inputData.phone);
     });
 
-    await appTester(App.creates.invite.operation.perform, bundle);
+    await appTester(App.creates.send_invite.operation.perform, bundle);
     expect.assertions(4);
   });
   it('has client_id in url', async() => {
@@ -107,7 +107,7 @@ describe('App.creates.invite.operation.perform', () => {
       );
     });
 
-    await appTester(App.creates.invite.operation.perform, bundle);
+    await appTester(App.creates.send_invite.operation.perform, bundle);
     expect.assertions(1);
   })
 });
@@ -136,7 +136,7 @@ describe('App.creates.client.operation.perform', () => {
       expect(client_company.description).toEqual(bundle.inputData.description);
     });
 
-    await appTester(App.creates.client.operation.perform, bundle);
+    await appTester(App.creates.create_client.operation.perform, bundle);
 
     expect.assertions(2);
   });

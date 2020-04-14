@@ -26,11 +26,16 @@ const App = {
 
   resources: {},
 
-  triggers: { request },
+  triggers: {
+    [request.key]: request
+  },
 
   searches: {},
 
-  creates: { invite, client }
+  creates: { 
+    [invite.key]: invite, 
+    [client.key]: client 
+  }
 };
 
 module.exports = App;
