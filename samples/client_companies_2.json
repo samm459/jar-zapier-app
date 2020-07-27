@@ -1,0 +1,33 @@
+{
+  "currentPage": 2,
+  "totalPages": 2,
+  "perPage": 100,
+  "totalEntries": 2,
+  "data": [
+    {
+      "id": 2,
+      "name": "Sample Company 2",
+      "slug": "sample-company-2",
+      "createdAt": "2018-11-15T23:01:20.857-07:00",
+      "updatedAt": "2018-11-15T23:01:32.306-07:00",
+      "deleted": false,
+      "status": "active",
+      "description": "Another sample company for testing paginated search.",
+      "seesAllRequests": false,
+      "users": [
+        {
+          "firstName": "Sam",
+          "lastName": "Morey",
+          "email": "sam@morey.com",
+          "deleted": false,
+          "invitationAccepted": true
+        }
+      ],
+      "designer": {
+        "firstName": "Michael",
+        "lastName": "Fox",
+        "email": "m@fox.com"
+      }
+    }
+  ]
+}

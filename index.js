@@ -1,41 +1,35 @@
-const authentication = require('./authentication');
-const request = require('./triggers/request');
-const invite = require('./creates/invite');
-const client = require('./creates/client');
+const Authentication = require('./Authentication');
+const RequestTrigger = require('./triggers/RequestTrigger');
+const InviteCreator = require('./creates/InviteCreator');
+const ClientResource = require("./resources/ClientResource");
 
-const configureAuth = (request, _, bundle) => {
-  request.headers['x-auth-token'] = bundle.authData.api_key
-  request.url = request.url.replace(
-    /^https:\/\//,
-    'https://' 
-    + bundle.authData.subdomain 
-    + '.'
-  )
-  return request;
+class App {
+  static resources = { [ClientResource.config.key]: ClientResource.config }
+  static triggers = { [RequestTrigger.config.key]: RequestTrigger.config }
+  static creates = { [InviteCreator.config.key]: InviteCreator.config }
+
+  static configureAuth(request, _, bundle) {
+    request.headers['x-auth-token'] = bundle.authData.api_key
+    request.url = request.url.replace(
+      /^https:\/\//,
+      'https://'
+      + bundle.authData.subdomain
+      + '.'
+    )
+    return request;
+  }
+
+  static config = {
+    version: require('./package.json').version,
+    platformVersion: require('zapier-platform-core').version,
+    authentication: Authentication.config,
+    beforeRequest: [App.configureAuth],
+    afterResponse: [],
+    resources: App.resources,
+    triggers: App.triggers,
+    creates: App.creates,
+    searches: {}
+  }
 }
 
-const App = {
-  version: require('./package.json').version,
-  platformVersion: require('zapier-platform-core').version,
-
-  authentication,
-
-  beforeRequest: [ configureAuth ],
-
-  afterResponse: [],
-
-  resources: {},
-
-  triggers: {
-    [request.key]: request
-  },
-
-  searches: {},
-
-  creates: { 
-    [invite.key]: invite, 
-    [client.key]: client 
-  }
-};
-
-module.exports = App;
+module.exports = App.config;

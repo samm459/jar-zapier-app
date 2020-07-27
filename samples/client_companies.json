@@ -1,0 +1,33 @@
+{
+  "currentPage": 1,
+  "totalPages": 2,
+  "perPage": 1,
+  "totalEntries": 2,
+  "data": [
+    {
+      "id": 1,
+      "name": "Back to the Future",
+      "slug": "back-to-the-future",
+      "createdAt": "2018-11-15T23:01:20.857-07:00",
+      "updatedAt": "2018-11-15T23:01:32.306-07:00",
+      "deleted": false,
+      "status": "active",
+      "description": "Back to the Future is a 1985 American science fiction film.",
+      "seesAllRequests": false,
+      "users": [
+        {
+          "firstName": "Marty",
+          "lastName": "McFly",
+          "email": "marty@mcfly.com",
+          "deleted": false,
+          "invitationAccepted": true
+        }
+      ],
+      "designer": {
+        "firstName": "Michael",
+        "lastName": "Fox",
+        "email": "m@fox.com"
+      }
+    }
+  ]
+}
