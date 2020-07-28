@@ -17,7 +17,7 @@ module.exports = {
     {
       key: 'subdomain',
       helpText: 'The [Jar App](https://app.jarhq.com) will automatically redirect you to your subdomain. For example, if you are redirected to mycompany.jarhq.com, your subdomain is mycompany.',
-      label: 'API Key', required: true, type: 'string'
+      label: 'Subdomain', required: true, type: 'string'
     }
   ],
   test: test,

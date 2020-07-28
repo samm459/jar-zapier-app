@@ -31,7 +31,7 @@ async function create(z, bundle) {
     url: 'https://jarhq.com/api/customers/client_companies.json',
     body: {
       client_company: {
-        companyName,
+        name: companyName,
         description
       }
     }

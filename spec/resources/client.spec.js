@@ -90,7 +90,7 @@ describe('ClientResource', () => {
 
       nockReq.on('request', (_, __, body) => {
         const { client_company } = JSON.parse(body);
-        expect(client_company.companyName).toEqual(bundle.inputData.companyName);
+        expect(client_company.name).toEqual(bundle.inputData.companyName);
         expect(client_company.description).toEqual(bundle.inputData.description);
       });
 
