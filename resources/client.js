@@ -85,9 +85,5 @@ module.exports = {
       perform: create
     },
   },
-  sample: require('../samples/client_companies.json').data,
-  outputFields: [
-    { key: 'id', label: 'ID' },
-    { key: 'name', label: 'Name' }
-  ]
+  sample: require('../samples/client_companies.json').data
 }
