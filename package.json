@@ -7,10 +7,11 @@
   "author": "Sam Morey <sam@contentcucumber.com>",
   "main": "index.js",
   "scripts": {
-    "test:Authentication": "jest ./spec/Authentication.spec.js",
-    "test:RequestTrigger": "jest ./spec/triggers/RequestTrigger.spec.js",
-    "test:ClientResource": "jest ./spec/resources/ClientResource.spec.js",
-    "test:InviteCreator": "jest ./spec/creates/InviteCreator.spec.js"
+    "test": "jest",
+    "test:auth": "jest ./spec/authentication.spec.js",
+    "test:request": "jest ./spec/triggers/request.spec.js",
+    "test:client": "jest ./spec/resources/client.spec.js",
+    "test:invite": "jest ./spec/creates/invite.spec.js"
   },
   "engines": {
     "node": ">=8.10.0",
