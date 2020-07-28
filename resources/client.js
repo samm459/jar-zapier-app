@@ -1,3 +1,5 @@
+const sample = require('../samples/client_companies.json');
+
 async function list(z) {
   const response = await z.request({
     url: 'https://jarhq.com/api/customers/client_companies.json'
@@ -44,7 +46,7 @@ module.exports = {
   list: {
     display: {
       label: 'New Client',
-      description: 'Lists the clients.'
+      description: 'Triggers when a new client is created.'
     },
     operation: {
       perform: list,
@@ -60,7 +62,7 @@ module.exports = {
         { key: 'email', required: true }
       ],
       perform: search
-    },
+    }
   },
   create: {
     display: {
@@ -83,7 +85,7 @@ module.exports = {
         }
       ],
       perform: create
-    },
+    }
   },
-  sample: require('../samples/client_companies.json').data
+  sample: sample.data[0]
 }
